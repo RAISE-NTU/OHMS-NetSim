@@ -137,7 +137,7 @@ If you use OHMS-NetSim in your research, please cite our work.
 *(Please add your publication details here once available)*
 
 ```bibtex
-@inproceedings{your-lastname-2025-ohms,
+@inproceedings{boralessa-2025-ohmsnetsim,
   title     = {OHMS‑NetSim: Enabling Obstacle‑Aware Network‑Physics Co-Simulation for Outdoor Multi‑Robot Applications},
   author    = {Kalhan Boralessa, David Adama, Ahmad Lotfi, and João Filipe Ferreira},
   booktitle = {UKCI},
