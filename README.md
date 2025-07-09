@@ -6,10 +6,9 @@
 
 OHMS-NetSim is a high-fidelity simulation framework for developing and testing algorithms for Outdoor Heterogeneous Multi-Robot Systems. Built on ROS 2 Humble and Gazebo, it provides a realistic platform for researchers to validate navigation, communication, and coordination strategies in challenging outdoor environments.
 
-A key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realistic, range-dependent communication degradation based on established scientific models, enabling the study of communication-aware robotics.
+The key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realistic, obstacle-dependent communication degradation based on established scientific models, enabling the study of communication-aware robotics.
 
 ![OHMS-NetSim Forest Environment](./docs/images/ohms_sim_screenshot.png)
-*(Note: You will need to add a screenshot of your simulator to `docs/images/ohms_sim_screenshot.png`)*
 
 ---
 
@@ -27,7 +26,7 @@ A key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realisti
 ## Key Features
 
 * **Heterogeneous Teams:** Simulate complex teams of Unmanned Ground Vehicles (UGVs) and Unmanned Aerial Vehicles (UAVs).
-* **Realistic Outdoor Worlds:** Includes several pre-built environments, such as a Mars yard and dense forests of varying scales.
+* **Realistic Outdoor Worlds:** Includes several pre-built environments, such as a marsyard and dense forests.
 * **Modular Scenario Definition:** Easily define and launch complex multi-robot scenarios using a combination of YAML configuration files and ROS 2 launch files.
 * **Scientifically-Grounded Comms Emulation:** A custom Gazebo plugin simulates path loss and packet drop rates based on peer-reviewed models, allowing for realistic testing of communication-aware algorithms.
 * **ROS 2 Humble Integration:** Fully integrated with the ROS 2 ecosystem, providing a standard platform for robotics research and development.
@@ -57,7 +56,7 @@ These instructions assume you are using **Ubuntu 22.04** with **ROS 2 Humble Haw
 2.  **Clone the Repository:**
     Clone this repository into your workspace's `src` directory.
     ```bash
-    git clone <your-repository-url> src/ohms_sim
+    git clone <your-repository-url> 
     ```
 
 3.  **Install Dependencies:**
@@ -139,11 +138,11 @@ If you use OHMS-NetSim in your research, please cite our work.
 
 ```bibtex
 @inproceedings{your-lastname-2025-ohms,
-  title     = {OHMS-NetSim: An Outdoor Heterogeneous Multi-Robot System Simulator for Communication-Aware Robotics},
-  author    = {Your Name and Co-authors},
-  booktitle = {Name of Conference or Journal},
+  title     = {OHMS‑NetSim: Enabling Obstacle‑Aware Network‑Physics Co-Simulation for Outdoor Multi‑Robot Applications},
+  author    = {Kalhan Boralessa, David Adama, Ahmad Lotfi, and João Filipe Ferreira},
+  booktitle = {UKCI},
   year      = {2025},
-  address   = {City, Country}
+  address   = {Edinburg, UK}
 }
 ```
 
