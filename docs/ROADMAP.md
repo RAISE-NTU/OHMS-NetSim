@@ -1,73 +1,60 @@
-# Contributing to OHMS-NetSim
+# **OHMS-NetSim: A Phased Release Plan**
 
-Thank you for your interest in contributing to the Outdoor Heterogeneous Multi-Robot System Simulator (OHMS-NetSim)! We are delighted to have you. Every contribution, whether it's a bug report, a feature request, or a code change, is valuable to us.
+## **1\. Introduction and Guiding Principles**
 
-To ensure a smooth and effective collaboration, please take a moment to review this document.
+To ensure the long-term sustainability, usability, and growth of OHMS-NetSim, we are adopting a structured, phased release plan. This plan is designed to provide transparency to our users and contributors, outlining the project's development trajectory from its current prototype stage to a stable, feature-rich simulation tool.
 
-## Code of Conduct
+Our development will adhere to the principles of Semantic Versioning (SemVer). All releases will follow a `MAJOR`.`MINOR`.`PATCH` format:
 
-All participants in this project are expected to adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md). Please ensure you have read and understood it before contributing.
+* MAJOR version increments indicate incompatible API changes.  
+* MINOR version increments signify the addition of functionality in a backwards-compatible manner.  
+* PATCH version increments are for backwards-compatible bug fixes.
 
-## How Can I Contribute?
+This approach will ensure that users can update the software with confidence, understanding the scope of changes in each new version.
 
-There are several ways you can contribute to the project:
+## **2\. Release Phases and Timeline**
 
-* **Reporting Bugs:** If you encounter a bug, please let us know by opening an issue.
-* **Suggesting Enhancements:** If you have an idea for a new feature or an improvement to an existing one, we would love to hear about it.
-* **Improving Documentation:** If you find parts of the documentation that are unclear or could be improved, you can open an issue or submit a pull request with your proposed changes.
-* **Submitting Code:** If you would like to contribute code to fix a bug or implement a new feature, please submit a pull request.
+### **Phase 1: v0.1.0 — Initial Prototype**
 
-## Reporting Bugs
+This is the version submitted alongside camera ready paper. It serves as a proof-of-concept, demonstrating the core functionalities and the scientific underpinnings of the simulator.
 
-Before submitting a new bug report, please check the existing issues to see if the bug has already been reported.
+* Status: Prototype  
+* Key Features:  
+  * ROS 2 Humble integration for multi-robot simulation in Ignition Gazebo.  
+  * Modular architecture using reusable launch files and YAML-based configuration for defining complex scenarios.  
+  * A custom Gazebo plugin, `CommsEmulatorHelper`, for simulating network conditions.  
+  * Initial implementation of scientifically-grounded path loss models for forested environments, with in-code citations to relevant literature.  
+  * A library of pre-configured robot models (UGVs and UAVs) and environment worlds.  
+  * Version-Controlled Documentation: All project documentation is maintained in Markdown format directly within the main GitHub repository. This approach ensures that the documentation is version-controlled in lockstep with the source code. The initial documentation is structured with a comprehensive `README.md` as the primary entry point, which links to a `/docs` directory containing detailed guides, tutorials, and supplementary materials.  
+  * Community Governance Framework: To foster a collaborative and inclusive community, this initial version establishes a clear governance framework. This includes the creation of a `CONTRIBUTING.md` file, which details the process for submitting bug reports, feature requests, and pull requests, alongside the adoption of a `CODE\_OF\_CONDUCT.md` to ensure a welcoming development environment for all contributors.  
+* Target Audience: Researchers and developers requiring a foundational tool for multi-robot simulation with basic communication emulation.
 
-When submitting a bug report, please include the following information:
+### **Phase 2: v0.2.0 — First Public Release**
 
-* **A clear and descriptive title:** For example, "Gazebo crashes when spawning more than 10 UAVs in the `forest5x` world."
-* **A detailed description of the problem:** Explain the issue and what you expected to happen.
-* **Steps to reproduce the behaviour:** Provide a clear, step-by-step description of how to reproduce the bug.
-* **Your system setup:**
-    * Operating System (e.g., Ubuntu 22.04)
-    * ROS 2 Version (e.g., Humble Hawksbill)
-    * Gazebo Version
-    * Any other relevant details about your environment.
+This release will focus on solidifying the project's foundations, addressing the key concerns raised during the peer-review process, and preparing the simulator for wider community adoption.
 
-## Suggesting Enhancements
+* Target Timescale: 1-2 months post-publication.  
+* Primary Goals: Enhance usability, foster community engagement, and improve verifiability.  
+* Planned Features:  
+  * Expansion of Documentation: The documentation within the `/docs` directory will be expanded to include: step-by-step tutorials for creating new simulation scenarios and guides for extending the simulator with new robot models.  
+  * Expanded and Configurable Communication Models:  
+    * Enable the configuration of communication model parameters from within the world's SDF file, allowing for self-contained simulation environments.  
+    * Allow users to select from multiple path loss models via configuration files.  
+  * Stability and Refinement: This release will also serve as an opportunity to enhance the stability and robustness of the simulator. We will actively incorporate any bug fixes and minor refinements that have been identified during the peer-review process and from initial feedback provided by early adopters.
 
-We welcome suggestions for new features and improvements. To submit a suggestion, please open an issue and provide:
+### **Phase 3: v1.0.0 — First Stable Release**
 
-* **A clear and descriptive title.**
-* **A detailed description of the proposed enhancement.** Explain why this enhancement would be useful to the project.
-* **Any relevant context,** such as mock-ups, examples, or links to related work.
+This will be the first official, stable release of OHMS-NetSim. The focus will be on robustness, reliability, and establishing the simulator as a trusted tool for repeatable scientific experiments.
 
-## Submitting Pull Requests
+* Target Timescale: 6-9 months post-publication.  
+* Primary Goals: Ensure long-term stability and expand core simulation capabilities.  
+* Planned Features:  
+  * Ongoing Maintenance and Bug Fixes: This release marks our commitment to long-term support. We will provide regular patch releases to address bugs, security vulnerabilities, and other issues reported by the community, ensuring the simulator remains a reliable tool for research.
 
-If you would like to contribute code, please follow these steps:
+### **Phase 4: Long-Term Vision (Post-v1.0.0)**
 
-1.  **Fork the repository** to your own GitHub account.
-2.  **Create a new branch** for your changes: `git checkout -b feature/my-new-feature` or `git checkout -b fix/issue-number`.
-3.  **Make your changes.** Please ensure your code adheres to the project's style guides.
-4.  **Commit your changes** with a clear and descriptive commit message.
-5.  **Push your branch** to your fork: `git push origin feature/my-new-feature`.
-6.  **Open a pull request** to the `main` branch of the main OHMS-NetSim repository.
-7.  **Provide a clear description** of the changes in your pull request, linking to any relevant issues.
+Beyond the first stable release, we envision OHMS-NetSim evolving to meet the growing needs of the robotics research community. Potential future directions include:
 
-### Development Setup
-
-OHMS-NetSim is a standard ROS 2 package. To set up your development environment, you will need to have ROS 2 Humble installed. You can then clone your fork of the repository into your colcon workspace and build it using:
-
-```bash
-cd your_ros2_ws
-colcon build --packages-select ohms_sim
-source install/setup.bash
-```
-
-### Styleguides
-
-To maintain a consistent code style throughout the project, please adhere to the following guidelines:
-
-* **C++:** Please follow the [ROS 2 C++ Style Guide](https://docs.ros.org/en/humble/Contributing/Code-Style-Language-Versions.html#c).
-* **Python:** Please follow the [PEP 8 Style Guide](https://peps.python.org/pep-0008/) and the [ROS 2 Python Style Guide](https://docs.ros.org/en/humble/Contributing/Code-Style-Language-Versions.html#python).
-* **CMake:** Please follow the [ROS 2 CMake Style Guide](https://docs.ros.org/en/humble/Contributing/Code-Style-Language-Versions.html#cmake).
-
-We look forward to your contributions!
+* Evolving the Gazebo plugin into a fully-featured network emulation suite with a modular architecture for the straightforward integration of new propagation and channel models.  
+* Support for more advanced network emulation, including dynamic latency, and jitter models.  
+* Development of a broader, community-contributed library of robot models, sensors, and simulation worlds.

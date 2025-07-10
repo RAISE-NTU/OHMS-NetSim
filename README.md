@@ -15,7 +15,7 @@ The key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realis
 ## Table of Contents
 - [Key Features](#key-features)
 - [Installation](#installation)
-- [Getting Started: Running a Simulation](#getting-started-running-a-simulation)
+- [Getting Started and Tutorials](#getting-started)
 - [Project Structure](#project-structure)
 - [Community and Contribution](#community-and-contribution)
 - [Citation](#citation)
@@ -32,78 +32,12 @@ The key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realis
 * **ROS 2 Humble Integration:** Fully integrated with the ROS 2 ecosystem, providing a standard platform for robotics research and development.
 
 ---
+## Getting Started and Tutorials
 
-## Installation
-
-These instructions assume you are using **Ubuntu 22.04** with **ROS 2 Humble Hawksbill** installed.
-
-### 1. Prerequisites
-
-* **ROS 2 Humble:** Ensure you have a working installation of ROS 2 Humble. You can follow the official installation guide [here](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
-* **Gazebo Fortress:** OHMS-NetSim uses Gazebo (formerly Ignition Gazebo). The required version, Fortress, is typically installed as a dependency of ROS 2 Humble (`ros-humble-ros-gz`).
-* **Colcon:** The standard ROS 2 build tool.
-* **Git:** For cloning the repository.
-
-### 2. Build Instructions
-
-1.  **Create a Colcon Workspace:**
-    If you do not have one already, create a new ROS 2 workspace.
-    ```bash
-    mkdir -p ~/ros2_ws/src
-    cd ~/ros2_ws
-    ```
-
-2.  **Clone the Repository:**
-    Clone this repository into your workspace's `src` directory.
-    ```bash
-    git clone <your-repository-url> 
-    ```
-
-3.  **Install Dependencies:**
-    Use `rosdep` to install any missing dependencies.
-    ```bash
-    rosdep install -i --from-path src -y --rosdistro humble
-    ```
-
-4.  **Build the Workspace:**
-    Build the `ohms_netsim` package using `colcon`.
-    ```bash
-    colcon build --packages-select ohms_netsim
-    ```
-
----
-
-## Getting Started: Running a Simulation
-
-Once the package has been built successfully, you can run the various simulation scenarios.
-
-1.  **Source the Workspace:**
-    Before running any ROS 2 commands, you must source the workspace's setup file in every new terminal.
-    ```bash
-    source ~/ros2_ws/install/setup.bash
-    ```
-
-2.  **Launch a Simulation:**
-    Use the `ros2 launch` command to start a simulation. Several pre-configured scenarios are available.
-
-    * **Example 1: Single UGV in a Forest**
-        This will launch a single Husky UGV in the `forest` world.
-        ```bash
-        ros2 launch ohms_netsim single_robot_sim.launch.py world:=forest
-        ```
-
-    * **Example 2: Dual UGV-UAV Team**
-        This launches a team consisting of one Husky UGV and one X4 UAV.
-        ```bash
-        ros2 launch ohms_netsim dual_robot_uav_ugv_sim.launch.py world:=forest
-        ```
-
-    * **Example 3: Large Heterogeneous Team**
-        This launches a team of two UGVs and two UAVs in a larger, denser forest environment.
-        ```bash
-        ros2 launch ohms_netsim multi_robot_2uav_2ugv_sim.launch.py world:=forest5x
-        ```
-
+* **[Getting Started](./docs/GETTING_STARTED.md):** Tutorial to start a basic simulation.
+* **Tutorials:**  
+    - **Update Environment:** _TODO: Add step-by-step guide for simulating new Gazebo worlds._  
+    - **Update Robot Models:** _TODO: Add step-by-step guide for customizing existing robot models or integrating new robots into the simulation._
 ---
 
 ## Project Structure
@@ -115,7 +49,7 @@ The repository is organised to allow for easy customisation and extension.
 * `/worlds`: Contains the Gazebo `.sdf` world files.
 * `/models`: Contains the Gazebo `.sdf` model files for the robots and other objects in the world.
 * `/src`: Contains the C++ source code for the `CommsEmulatorHelper` Gazebo plugin.
-* `/docs`: Contains detailed project documentation, including the project roadmap.
+* `/docs`: Contains detailed project documentation.
 
 To create a new scenario, you can create a new YAML file in the `/config` directory and a corresponding launch file in the `/launch` directory.
 
@@ -134,7 +68,6 @@ We welcome contributions from the community! Whether you are reporting a bug, su
 ## Citation
 
 If you use OHMS-NetSim in your research, please cite our work.
-*(Please add your publication details here once available)*
 
 ```bibtex
 @inproceedings{boralessa-2025-ohmsnetsim,
