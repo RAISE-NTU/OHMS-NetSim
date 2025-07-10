@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ohms_sim)
+project(ohms_netsim)
 
 find_package(ament_cmake REQUIRED)
 

@@ -58,7 +58,7 @@ OHMS-NetSim is a standard ROS 2 package. To set up your development environment,
 
 ```bash
 cd your_ros2_ws
-colcon build --packages-select ohms_sim
+colcon build --packages-select ohms_netsim
 source install/setup.bash
 ```
 

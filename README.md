@@ -8,7 +8,7 @@ OHMS-NetSim is a high-fidelity simulation framework for developing and testing a
 
 The key feature of OHMS-NetSim is its custom Gazebo plugin that simulates realistic, obstacle-dependent communication degradation based on established scientific models, enabling the study of communication-aware robotics.
 
-![OHMS-NetSim Forest Environment](./docs/images/ohms_sim_screenshot.png)
+![OHMS-NetSim Forest Environment](./docs/images/ohms_netsim_screenshot.png)
 
 ---
 
@@ -66,9 +66,9 @@ These instructions assume you are using **Ubuntu 22.04** with **ROS 2 Humble Haw
     ```
 
 4.  **Build the Workspace:**
-    Build the `ohms_sim` package using `colcon`.
+    Build the `ohms_netsim` package using `colcon`.
     ```bash
-    colcon build --packages-select ohms_sim
+    colcon build --packages-select ohms_netsim
     ```
 
 ---
@@ -89,19 +89,19 @@ Once the package has been built successfully, you can run the various simulation
     * **Example 1: Single UGV in a Forest**
         This will launch a single Husky UGV in the `forest` world.
         ```bash
-        ros2 launch ohms_sim single_robot_sim.launch.py world:=forest
+        ros2 launch ohms_netsim single_robot_sim.launch.py world:=forest
         ```
 
     * **Example 2: Dual UGV-UAV Team**
         This launches a team consisting of one Husky UGV and one X4 UAV.
         ```bash
-        ros2 launch ohms_sim dual_robot_uav_ugv_sim.launch.py world:=forest
+        ros2 launch ohms_netsim dual_robot_uav_ugv_sim.launch.py world:=forest
         ```
 
     * **Example 3: Large Heterogeneous Team**
         This launches a team of two UGVs and two UAVs in a larger, denser forest environment.
         ```bash
-        ros2 launch ohms_sim multi_robot_2uav_2ugv_sim.launch.py world:=forest5x
+        ros2 launch ohms_netsim multi_robot_2uav_2ugv_sim.launch.py world:=forest5x
         ```
 
 ---
