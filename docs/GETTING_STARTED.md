@@ -71,5 +71,5 @@ Once the package has been built successfully, you can run the various simulation
         > **Tip:** Check the [`/launch`](./launch) folder for more simulation launch files and scenario options.
 
 3. **Setup Docker**
-    **[Setup Docker](./docs/SETTING_UP_DOCKER.md):** 
+    **[Setup Docker](./SETTING_UP_DOCKER.md):** 
 ---
