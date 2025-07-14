@@ -20,7 +20,7 @@ This emulator has two main components:
 1.  **Clone the Repository**:
     First, you need to clone the necessary repository from GitHub. Open your terminal and run the following command:
     ```
-    git clone https://github.com/RAISE-NTU/ohms\_netsim\_robot\_workspaces.git
+    git clone https://github.com/RAISE-NTU/docker\_network\_comms\_emulator.git
     ```
 
 2. **Navigate to the `build` directory**:

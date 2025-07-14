@@ -32,7 +32,9 @@ docker build \-t atlas:latest .
 
 Now, run the Atlas container. This command connects it to the network you created and sets up the display environment for GUI applications.
 
+```
 sudo docker run \-it \--env="DISPLAY" \--network=robotAnet \--env="QT\_X11\_NO\_MITSHM=1" \-v /tmp/.X11-unix:/tmp/.X11-unix:rw \--name=atlas atlas:latest /bin/bash
+```
 
 *Note: You may need to run xhost \+local:docker on your host machine to allow the container to access your display.*
 
@@ -49,12 +51,16 @@ cd bestla\_docker
 
 Now, build the Bestla image:
 
+```
 docker build \-t bestla:latest .
+```
 
 ### **Run the Container**
 
 Finally, run the Bestla container, connecting it to the same robotAnet network.
 
+```
 sudo docker run \-it \--network=robotAnet \--name=bestla bestla:latest /bin/bash
+```
 
 After these steps, both your atlas and bestla containers will be running and connected to the robotAnet network, allowing them to communicate with each other.
