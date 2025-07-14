@@ -80,5 +80,5 @@ Once the package has been built successfully, you can run the various simulation
     one after other.
 
 4. **Comms Emulator**
-    **[Comms Emulator](./COMMS_EMULATOR.md)**
+    **[Comms Emulator](./RUNNING_COMMS_EMULATOR.md)**
 ---
