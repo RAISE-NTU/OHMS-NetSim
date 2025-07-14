@@ -72,6 +72,12 @@ Once the package has been built successfully, you can run the various simulation
 
 3. **Setup Docker**
     **[Setup Docker](./SETTING_UP_DOCKER.md)** 
+    You have to identify veth names of docker network bridges for comms emulator (next step), easiest way is to create and run docker 
+    container for each robot and check veth name using
+    ```
+    ip link show
+    ```
+    one after other.
 
 4. **Comms Emulator**
     **[Comms Emulator](./COMMS_EMULATOR.md)**
